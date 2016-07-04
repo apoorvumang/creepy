@@ -53,8 +53,8 @@ exports.getStudents = (req, res) => {
       // var merged = [].concat.apply([], docs);
       // console.log(docs[0]);
       // res.render('students', { students: docs });
-      Student.find({rollno: /^11/,rand:{$gte:Math.random()}}, {_id:0}).sort({rand:1}).limit(1).exec(function (err, docs) {
-        res.send(Math.random());
+      Student.find({rollno: /^11/,rand:{$gte:Math.random()}}, {_id:0}, function (err, docs) {
+        res.send(docs);
       });
       // res.send(Math.random());
   })
