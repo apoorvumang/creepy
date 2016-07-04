@@ -52,7 +52,8 @@ exports.getStudents = (req, res) => {
       }
       // var merged = [].concat.apply([], docs);
       // console.log(docs[0]);
-      res.render('students', { students: docs });
+      // res.render('students', { students: docs });
+      res.send(docs);
   })
 
   // Student.findOne({rollno:'11CS30005'}, function(err, docs) {
