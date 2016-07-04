@@ -1,0 +1,121 @@
+extends layout
+
+block content
+  .page-header
+    h3 All Students
+
+  
+  h2#results
+  .col-md-8
+    ul.students-grid
+      for student in students
+        li
+          //- p=student.name
+          label
+            input(type='radio' name='student' value='#{student.rollno}')
+            img(src='/images/#{student.rollno}.jpg' title='#{student.name}')
+  .col-md-4
+    form(role='form' onsubmit='doStuff(); return false;')
+      .form-group
+        label(for='name') Name 
+        small.score#nameScore
+        span.right-align#resName
+        input#name(type="text").form-control
+      .form-group
+        label(for='cgpa') CGPA
+        small.score#cgpaScore
+        span.right-align#resCGPA
+        input#cgpa(type="number" step='0.01').form-control
+      .form-group
+        label(for='course') Course code
+        small.score#courseScore
+        span.right-align#resCourse
+        select#course.form-control
+          option AE
+          option AE1
+          option AG
+          option AR
+          option BT
+          option BT1
+          option CE
+          option CED
+          option CH
+          option CH1
+          option CS
+          option CS2
+          option CY1
+          option EC
+          option EE
+          option EX
+          option GG
+          option HS
+          option IE
+          option IM
+          option IM1
+          option MA
+          option ME
+          option MF
+          option MI
+          option MT
+          option MT1
+          option NA
+          option NA1
+          option PH
+          option AGD
+          option ECD
+          option EED
+          option MED
+          option QDE
+          option QDM
+      .form-group
+        label(for='hall') Hall code
+        small.score#hallScore
+        span.right-align#resHall
+        select#hall.form-control
+          option AZD
+          option NHR
+          option RKH
+          option RPH
+          option MSH
+          option LLR
+          option PAT
+          option SN/IG
+          option HJB
+          option VSH
+          option MMH
+          option MTH
+          option LBS
+          option JCB
+          option BF1
+      .form-group
+        label(for='minor') Minor
+        small.score#minorScore
+        span.right-align#resMinor
+        input#minor(type="text").form-control
+      .form-group
+        label(for='category') Category
+        small.score#minorScore
+        span.right-align#resCategory
+        select#category.form-control
+          option GE
+          option OB
+          option SC
+          option ST
+      .form-group
+        label(for='rollno') Roll number
+        small.score#rollnoScore
+        span.right-align#resRollno
+        input#rollno(type="text").form-control
+      .form-group
+        h4
+          button#search(type='submit').btn.btn-default Submit
+          span.right-align#lenny ( ͡° ͜ʖ ͡°)
+    h4 
+      p Score:
+        span.right-align#thisscore
+    h3
+      p Total Score:
+        span.right-align#score
+
+
+//- <li><input type="checkbox" name="text1" value="value1" /><label for="text1">Text 1</label></li>
