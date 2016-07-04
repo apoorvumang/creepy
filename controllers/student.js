@@ -54,5 +54,9 @@ exports.getStudents = (req, res) => {
   //     // console.log(docs[0]);
   //     res.render('students', { students: docs });
   // })
-  res.send('hello');
+
+  Student.findOne({rollno:'11CS30005'}, function(err, docs) {
+    res.send(docs);
+  });
+
 };
