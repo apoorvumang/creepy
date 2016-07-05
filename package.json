@@ -17,6 +17,7 @@
     "body-parser": "^1.15.2",
     "cheerio": "^0.20.0",
     "clockwork": "^0.1.4",
+    "cloudinary": "^1.4.1",
     "compression": "^1.6.2",
     "connect-mongo": "^1.2.1",
     "dotenv": "^2.0.0",
